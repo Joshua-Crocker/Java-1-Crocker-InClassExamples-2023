@@ -53,18 +53,16 @@ public class FunWithPrimeNumbers {
         }
 
         else if (option == 4) {
-            System.out.println("Enter the first number: ");
-            int firstNum = scanner.nextInt();
-
-            System.out.println("Enter the second number: ");
-            int secondNum = scanner.nextInt();
+            System.out.println("Enter a number number: ");
+            int number = scanner.nextInt();
+            int i = 0;
 
             do {
                 System.out.print("\n");
-                System.out.printf("The prime factors of %d are: ", firstNum);
-                getUniquePrimeFactorization(firstNum);
-                firstNum++;
-            } while (secondNum >= firstNum);
+                System.out.printf("The prime factors of %d are: ", i);
+                getUniquePrimeFactorization(i);
+                i++;
+            } while (number >= i);
         }
     }
 }
