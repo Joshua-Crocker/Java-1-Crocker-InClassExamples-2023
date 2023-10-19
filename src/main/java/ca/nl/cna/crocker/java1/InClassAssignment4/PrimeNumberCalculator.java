@@ -21,7 +21,6 @@
 //        Has a nice console interface to manage these options.
 
 
-
 package ca.nl.cna.crocker.java1.InClassAssignment4;
 
 public class PrimeNumberCalculator {
@@ -38,7 +37,7 @@ public class PrimeNumberCalculator {
             return false;
         }
 
-        for (int i = 5; i <= n / 2; i += 6) {
+        for (int i = 5; i <= Math.sqrt(n); i += 6) {
             if (n % i == 0 || n % (i + 2) == 0) {
                 return false;
             }

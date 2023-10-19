@@ -2,8 +2,8 @@ package ca.nl.cna.crocker.java1.InClassAssignment4;
 
 import java.util.Scanner;
 
-import static ca.nl.cna.crocker.java1.InClassAssignment4.PrimeNumberCalculator.isPrime;
 import static ca.nl.cna.crocker.java1.InClassAssignment4.PrimeNumberCalculator.getUniquePrimeFactorization;
+import static ca.nl.cna.crocker.java1.InClassAssignment4.PrimeNumberCalculator.isPrime;
 
 public class FunWithPrimeNumbers {
     public static void main(String[] args) {
@@ -23,14 +23,12 @@ public class FunWithPrimeNumbers {
             int maxNum = scanner.nextInt();
             int i = 0;
             do {
-                if (isPrime(i)){
+                if (isPrime(i)) {
                     System.out.printf("%d is a prime num \n", i);
                 }
                 i++;
             } while (maxNum >= i);
-        }
-
-        else if (option == 2) {
+        } else if (option == 2) {
             System.out.println("Enter the first number: ");
             int firstNum = scanner.nextInt();
 
@@ -38,21 +36,17 @@ public class FunWithPrimeNumbers {
             int secondNum = scanner.nextInt();
 
             do {
-                if (isPrime(firstNum)){
+                if (isPrime(firstNum)) {
                     System.out.printf("%d is a prime num \n", firstNum);
                 }
                 firstNum++;
             } while (secondNum >= firstNum);
-        }
-
-        else if (option == 3) {
+        } else if (option == 3) {
             System.out.println("Enter a number: ");
             int num = scanner.nextInt();
 
             getUniquePrimeFactorization(num);
-        }
-
-        else if (option == 4) {
+        } else if (option == 4) {
             System.out.println("Enter a number number: ");
             int number = scanner.nextInt();
             int i = 0;
