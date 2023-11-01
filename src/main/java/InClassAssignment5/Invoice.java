@@ -1,44 +1,56 @@
 package InClassAssignment5;
 
+/**
+ * A class that builds the invoice for the invoice system
+ *
+ * @author joshua.crocker
+ */
+
 public class Invoice {
-    private InvoiceItem InvoiceItem1;
-    private InvoiceItem InvoiceItem2;
-    private InvoiceItem InvoiceItem3;
+    private final InvoiceItem[] invoiceItemsArray = new InvoiceItem[50];
+    private int invoiceItemsCounter = 0;
 
-    public InvoiceItem getInvoiceItem1() {
-        return InvoiceItem1;
+    /**
+     * get invoice items array
+     * @return invoice items array
+     */
+    public InvoiceItem[] getInvoiceItemsArray() {
+        return invoiceItemsArray;
     }
 
-    public void setInvoiceItem1(InvoiceItem invoiceItem1) {
-        InvoiceItem1 = invoiceItem1;
+    /**
+     * get invoice items counter
+     * @return invoice items counter
+     */
+    public int getInvoiceItemsCounter() {
+        return invoiceItemsCounter;
     }
 
-    public InvoiceItem getInvoiceItem2() {
-        return InvoiceItem2;
+    /**
+     * set invoice items counter
+     * @param invoiceItemsCounter invoice items counter
+     */
+    public void setInvoiceItemsCounter(int invoiceItemsCounter) {
+        this.invoiceItemsCounter = invoiceItemsCounter;
     }
 
-    public void setInvoiceItem2(InvoiceItem invoiceItem2) {
-        InvoiceItem2 = invoiceItem2;
+    /**
+     * add invoice item to invoice
+     * @param invoiceItem invoice item
+     */
+    public void addInvoiceItem(InvoiceItem invoiceItem) {
+        this.invoiceItemsArray[invoiceItemsCounter] = invoiceItem;
+        invoiceItemsCounter += 1;
     }
 
-    public InvoiceItem getInvoiceItem3() {
-        return InvoiceItem3;
-    }
-
-    public void setInvoiceItem3(InvoiceItem invoiceItem3) {
-        InvoiceItem3 = invoiceItem3;
-    }
-
+    /**
+     * get invoice total
+     * @return invoice total
+     */
     public double getInvoiceTotal() {
         double invoiceTotal = 0;
-        if(this.InvoiceItem1 != null) {
-            invoiceTotal += InvoiceItem1.getitemTotal();
-        }
-        if(this.InvoiceItem2 != null) {
-            invoiceTotal += InvoiceItem2.getitemTotal();
-        }
-        if(this.InvoiceItem3 != null) {
-            invoiceTotal += InvoiceItem3.getitemTotal();
+        for (int i = 0; i < this.invoiceItemsCounter; i++) {
+            invoiceTotal += invoiceItemsArray[i].getitemTotal();
         }
         return invoiceTotal;
     }

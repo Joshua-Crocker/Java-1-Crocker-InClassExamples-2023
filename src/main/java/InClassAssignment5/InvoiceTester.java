@@ -1,5 +1,11 @@
 package InClassAssignment5;
 
+/**
+ * A class to test the Invoice system
+ *
+ * @author joshua.crocker
+ */
+
 public class InvoiceTester {
     public static void main(String[] args) {
         Products justinHollSkills = new Products(-1, "Justin Holl has mad skillz man", 3400000);
@@ -38,9 +44,9 @@ public class InvoiceTester {
 
         Invoice invoice = new Invoice();
 
-        invoice.setInvoiceItem1(justinHollIsTheBest);
-        invoice.setInvoiceItem1(josephWollIsTheBest);
-        invoice.setInvoiceItem1(connorMcFraudSucks);
+        invoice.addInvoiceItem(justinHollIsTheBest);
+        invoice.addInvoiceItem(josephWollIsTheBest);
+        invoice.addInvoiceItem(connorMcFraudSucks);
 
         System.out.printf("Invoice total: %.2f", invoice.getInvoiceTotal());
     }
